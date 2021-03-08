@@ -345,5 +345,55 @@
 	$('.appointment_time').timepicker();
 
 
+	$(window).scroll(function(){
+		var start = $('#start').offset().top; 
+		var about = $('#about').offset().top;
+		var services = $('#services').offset().top; 
+		var portfolio = $('#portfolio').offset().top; 
+		var contact = $('#contact').offset().top;  
+		
+		if ($(window).scrollTop() >= start){
+			// $('a.nav-link').each(function( index ) {
+			// 	$(this).closest( "li" ).removeClass('active'); 
+			// });
+			$('a#astart').closest("li").addClass('active');
+			$('a#aabout').closest( "li" ).removeClass('active');
+			$('a#aservices').closest( "li" ).removeClass('active');
+			$('a#aportfolio').closest( "li" ).removeClass('active');
+			$('a#acontact').closest( "li" ).removeClass('active');
+		}
+		if ($(window).scrollTop() >= about){
+			$('a#astart').closest("li").removeClass('active');
+			$('a#aabout').closest( "li" ).addClass('active');
+			$('a#aservices').closest( "li" ).removeClass('active');
+			$('a#aportfolio').closest( "li" ).removeClass('active');
+			$('a#acontact').closest( "li" ).removeClass('active');
+		}
+		if ($(window).scrollTop() >= services){
+			$('a#astart').closest("li").removeClass('active');
+			$('a#aabout').closest( "li" ).removeClass('active');
+			$('a#aservices').closest( "li" ).addClass('active');
+			$('a#aportfolio').closest( "li" ).removeClass('active');
+			$('a#acontact').closest( "li" ).removeClass('active');
+		}
+		if ($(window).scrollTop() >= portfolio){
+			$('a#astart').closest("li").removeClass('active');
+			$('a#aabout').closest( "li" ).removeClass('active');
+			$('a#aservices').closest( "li" ).removeClass('active');
+			$('a#aportfolio').closest( "li" ).addClass('active');
+			$('a#acontact').closest( "li" ).removeClass('active');
+		}
+		if ($(window).scrollTop() >= contact){
+			$('a#astart').closest("li").removeClass('active');
+			$('a#aabout').closest( "li" ).removeClass('active');
+			$('a#aservices').closest( "li" ).removeClass('active');
+			$('a#aportfolio').closest( "li" ).removeClass('active');
+			$('a#acontact').closest( "li" ).addClass('active');
+		}
+
+		
+	});
+
+
 })(jQuery);
 
